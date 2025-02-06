@@ -1,5 +1,5 @@
 import { Router } from "express";
-import fectchedData from "../routes/classifyNumberRoute.js";
+import { fetchedData } from "../utils/fetchingNumberFact.js";
 import { isArmstrong, isPerfect, isPrime, sumOfDigits } from "../utils/help.js";
 
 const route = Router();
@@ -18,7 +18,7 @@ route.get("/api/v1/classify", async (req, res) => {
   const num = parseInt(number);
 
   try {
-    const funFact = await fectchedData(num, "math");
+    const funFact = await fetchedData(num);
 
     const response = {
       number: num,
@@ -37,7 +37,7 @@ route.get("/api/v1/classify", async (req, res) => {
 
     res.status(200).json(response);
   } catch (error) {
-    throw error;
+    throw Error(errors);
   }
 });
 

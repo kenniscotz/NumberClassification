@@ -6,9 +6,8 @@ const app = express();
 
 // MiddleWares
 app.use(cors());
-app.use(express.json());
 
-// ROutes
+// Routes
 app.use(classifyNumber);
 
 app.get("/", (req, res) => {

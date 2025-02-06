@@ -1,16 +1,16 @@
 // utils/fetchingNumberFact.js
 
 import axios from "axios";
-import { response } from "express";
 
 // This file: Used to fetch the external API request
-export const fectchedData = (num, type = "math") => {
+export const fetchedData = async (num, type = "math") => {
   try {
-    axios.get(`http://numbersapi.com/${num}/math`);
-    // const answer = response.text;
+    //   console.log(num);
+
+    const response = await axios.get(`http://numbersapi.com/${num}/${type}`);
+    // console.log(response);
     return response.data;
-    //  console.log(answer);
   } catch (error) {
-    throw error;
+    throw new Error(error);
   }
 };
