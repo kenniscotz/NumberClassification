@@ -22,8 +22,8 @@ route.get("/api/v1/classify", async (req, res) => {
 
     const response = {
       number: num,
-      isPrime: isPrime(num),
-      isPerfect: isPerfect(num),
+      is_Prime: isPrime(num),
+      is_Perfect: isPerfect(num),
       properties: [],
       digit_sum: sumOfDigits(num),
       fun_facts: funFact,
