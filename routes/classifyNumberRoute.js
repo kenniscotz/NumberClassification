@@ -26,7 +26,7 @@ route.get("/api/v1/classify", async (req, res) => {
       is_Perfect: isPerfect(num),
       properties: [],
       digit_sum: sumOfDigits(num),
-      fun_facts: funFact,
+      fun_fact: funFact,
     };
 
     // Adding the properties
